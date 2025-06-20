@@ -1,54 +1,74 @@
-# React + TypeScript + Vite
+# 모요 (Moyo) 메인 페이지 클론 과제
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+안녕하세요.  
+본 프로젝트는 아이오트러스트 프론트엔드 실기 과제를 위해 진행된 클론 코딩 과제입니다.  
+모요(Moyo)의 메인 페이지를 Mobile First 전략으로 구현하였습니다.
 
-Currently, two official plugins are available:
+## 클론한 서비스 URL
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<https://www.moyoplan.com/>
 
-## Expanding the ESLint configuration
+## 사용 기술 스택
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| 항목          | 설명                      |
+| ------------- | ------------------------- |
+| Framework     | Vite + React + TypeScript |
+| Styling       | TailwindCSS               |
+| 디자인 시스템 | shadcn/ui                 |
+| AI 도구       | Cursor AI 사용            |
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
-```
+## 구현 주요 요소
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Mobile First 전략 기반 레이아웃 설계 및 구현
+- 상단 헤더, 하단 고정 네비게이션, 하단 푸터, 각 섹션 등 핵심 구성 요소 UI 클론
+- 모바일 화면만 구현 (데스크탑 반응형은 시간이 부족하여 못했습니다.)
+- 배너 슬라이드 효과 구현 (keen-slider 라이브러리 이용)
+- 재사용 가능한 컴포넌트 분리 및 props 구조화
+- 디렉토리 구조는 역할 단위 기준으로 설계
+  - domain 단위의 `app` 폴더
+  - domain별로 사용되는 `component, section, type`등을 모아둔 폴더
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+## 왜 Mobile First로 구현했나요?
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-});
-```
+모바일 사용자의 비중이 높고, TailwindCSS가 `min-width` 기준으로 반응형을 지원하는 점을 고려하여  
+모바일 화면을 우선 구현하고, 여유가 된다면 PC 화면 대응을 추가하는 전략으로 진행하려고 했습니다.<br />
+하지만 생각보다 시간이 부족하여 PC 반응형은 진행하지 못했습니다.
+
+## 남은 작업 및 미구현 섹션
+
+- 테마별 요금제 섹션
+- 모요와 함께하는 통신사 섹션
+- PC 레이아웃 대응 마무리
+
+## 아쉬운 점
+
+- 전체 구현 시간을 고려하지 못해, 마지막 일부 섹션을 마무리하지 못한 점이 아쉽습니다.
+- 구현 이후 코드 점검 및 리팩토링 시간 확보가 어려웠던 점 역시 아쉬운 부분으로 남습니다. (이게 제일 아쉽습니다.)
+- TailwindCSS에서 색상을 일부 하드코딩하여 사용하였는데,  
+  실무에서는 디자인 시스템을 기반으로 색상을 관리하는 것이 바람직하다는 점을 인지하고 있으며,  
+  이번 과제에서는 구현 우선 순위로 인해 해당 부분을 추후 보완하기로 미루었으나 최종 반영하지 못했습니다.
+
+## AI 도구 사용 내역
+
+- **사용 도구**: [Cursor AI](https://www.cursor.so/)
+- **사용 목적**: 전체적인 레이아웃 구조와 mock 데이터 생성 등 노가다 작업을 도움 받았습니다.
+- **사용 예시 프롬프트**:
+
+  ```tsx
+  "모요 메인페이지를 Vite + React + Tailwind로 모바일 우선 클론하고 싶어. 기본 레이아웃 구조를 잡아줘."
+  ```
+
+  ```tsx
+  "(스크린샷을 주며) 화면에 쓰이는 mock 데이터를 만들어줘."
+  ```
+
+## 커밋 전략
+
+- 커밋 메시지는 기능 단위로 구분하여 작성하였습니다.
+- 예시:
+
+  ```text
+  feat: Promotion section 추가
+  style: web title 변경
+  등등
+  ```
