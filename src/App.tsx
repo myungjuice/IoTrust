@@ -1,7 +1,13 @@
-import './App.css';
+import '@/styles/global.css';
 
-function App() {
-  return <div>App</div>;
+import { Suspense } from 'react';
+
+import Routes from './app/Routes';
+
+export default function App() {
+  return (
+    <Suspense fallback={<div>로딩 중...</div>}>
+      <Routes />
+    </Suspense>
+  );
 }
-
-export default App;
