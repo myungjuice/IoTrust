@@ -42,6 +42,9 @@ pnpm dev
 
 ### 브라우저를 열어서 <http://localhost:5173> 으로 접근해주시면 사이트가 열립니다
 
+(Netlify에 배포하려고 했으나 잘 안되네요..)
+<https://lustrous-gelato-aa2375.netlify.app/>
+
 ## 구현 주요 요소
 
 - Mobile First 전략 기반 레이아웃 설계 및 구현
