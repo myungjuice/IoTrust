@@ -23,7 +23,7 @@ export default function BottomNavigation() {
 
   return (
     <nav className='fixed bottom-0 left-0 right-0 z-10 h-[50px] w-full bg-white'>
-      <ul className='m-0 mx-auto flex h-full w-full max-w-[640px] list-none items-center justify-evenly p-0'>
+      <ul className='m-0 mx-auto flex h-full w-full min-w-[320px] max-w-[640px] list-none items-center justify-evenly p-0'>
         {navItems.map(({ href, label, Icon, notification }) => {
           const isActive = pathname === href;
 

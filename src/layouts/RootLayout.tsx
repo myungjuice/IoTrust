@@ -6,7 +6,7 @@ import Header from './Header';
 
 export default function RootLayout() {
   return (
-    <div className='mx-auto h-full w-full max-w-[640px]'>
+    <div className='mx-auto h-full w-full min-w-[320px] max-w-[640px]'>
       <Header />
       <main>
         <Outlet />
