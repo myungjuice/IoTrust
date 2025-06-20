@@ -17,6 +17,31 @@
 | 디자인 시스템 | shadcn/ui                 |
 | AI 도구       | Cursor AI 사용            |
 
+## 로컬 실행 방법
+
+이 프로젝트는 Vite + React + TypeScript + pnpm 환경에서 실행됩니다.
+
+### 1. 저장소 클론
+
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
+
+### 2. 의존성 설치
+
+```bash
+pnpm install
+```
+
+### 개발 서버 실행
+
+```bash
+pnpm dev
+```
+
+### 브라우저를 열어서 <http://localhost:5173> 으로 접근해주시면 사이트가 열립니다
+
 ## 구현 주요 요소
 
 - Mobile First 전략 기반 레이아웃 설계 및 구현
