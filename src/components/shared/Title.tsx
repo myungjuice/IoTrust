@@ -8,7 +8,7 @@ type Props = {
 
 export default function Title({ title, subTitle, className }: Props) {
   return (
-    <div className={cn('flex flex-col', className)}>
+    <div className={cn('mb-4 flex flex-col', className)}>
       <h2 className='text-xl font-bold text-black'>{title}</h2>
       {subTitle && <p className='mt-1 text-base text-[#868e96]'>{subTitle}</p>}
     </div>
