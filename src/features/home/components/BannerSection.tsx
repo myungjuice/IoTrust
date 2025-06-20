@@ -42,7 +42,6 @@ export default function BannerSection() {
     <section className='relative px-4 py-2 pb-5'>
       <div ref={sliderRef} className='keen-slider overflow-hidden rounded-2xl'>
         {BANNER_LIST.map(banner => {
-          console.log(banner);
           return (
             <div key={banner.id} className='keen-slider__slide'>
               <Image
